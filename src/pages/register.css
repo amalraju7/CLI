@@ -1,0 +1,155 @@
+.register-container {
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  height: 100vh;
+
+  background-color: #f2f2f2;
+
+}
+
+
+
+
+.register-container h2 {
+
+  margin-bottom: 20px;
+
+}
+
+
+
+
+.centered-content {
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+}
+
+
+
+
+.form-group {
+
+  margin-bottom: 15px;
+
+}
+
+
+
+
+.form-group label {
+
+  display: block;
+
+  margin-bottom: 5px;
+
+  font-weight: bold;
+
+}
+
+
+
+
+.form-control {
+
+  width: 300px;
+
+  height: 35px;
+
+  padding: 5px;
+
+  border: 1px solid #ccc;
+
+  border-radius: 5px;
+
+  font-size: 16px;
+
+}
+
+
+
+
+.btn {
+
+  display: inline-block;
+
+  padding: 10px 20px;
+
+  background-color: #dc3545;
+
+  color: #fff;
+
+  font-size: 16px;
+
+  border: none;
+
+  border-radius: 5px;
+
+  cursor: pointer;
+
+}
+
+
+
+
+.btn:hover {
+
+  background-color: #c82333;
+
+}
+
+
+
+
+.btn:active {
+
+  background-color: #bd2130;
+
+}
+
+
+
+
+.btn:focus {
+
+  outline: none;
+
+}
+
+
+
+
+.btn-danger {
+
+  background-color: #dc3545;
+
+}
+
+
+
+
+.btn-danger:hover {
+
+  background-color: #c82333;
+
+}
+
+
+
+
+.btn-danger:active {
+
+  background-color: #bd2130;
+
+}
