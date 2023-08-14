@@ -6,7 +6,7 @@ import { Provider } from 'react-redux';
 import { store } from './state';
 import CellList from './components/cell-list';
 import Navigation from './pages/navigation';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, redirect, useNavigate, Navigate } from 'react-router-dom';
 import React, { useState } from 'react';
 import Home from './pages/Home';
 import About from './pages/About';
@@ -15,8 +15,8 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import LogoutButton from './components/log-out-button';
-
-
+import ProtectedRoute from './components/protected-route';
+import PrivateRoute from './components/protected-route';
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -24,6 +24,7 @@ const App = () => {
   const handleLogin = (value:boolean) => {
     
     setIsLoggedIn(value);
+
   };
 
   const handleRegister = (username: any, password: any) => {
@@ -39,20 +40,17 @@ const App = () => {
 
       <Navigation onLogOut={handleLogin} isLoggedIn={isLoggedIn}/>
 
+  
       <Routes>
           <Route path="/" element={<Home />} />
           <Route path="about" element={<About />} />
-          <Route path="codecell" element={<CellList />} />
+          <Route path="/login" element={<Login loginStatus={isLoggedIn} onLogin={handleLogin} />} />
+          <Route path="/register" element={<Register onRegister={handleRegister} />} />
           <Route
-          path="/login"
-          element={
-           <Login loginStatus={isLoggedIn} onLogin={handleLogin} />
-          }
-        />
-       
-        <Route path="/register" element={<Register onRegister={handleRegister} />} />
+            path="codecell"
+            element={isLoggedIn ? <CellList /> : <Navigate to="/login" />}
+          />
         </Routes>
-
        
 
       </BrowserRouter>

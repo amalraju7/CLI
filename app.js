@@ -24,7 +24,7 @@ app.use(cookieParser());
 
 
 // Connect to MongoDB
-mongoose.connect('mongodb://localhost:27017/CliProject', {
+mongoose.connect('mongodb+srv://amalraju7:amal@cluster0.acgs0ce.mongodb.net/?retryWrites=true&w=majority', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })

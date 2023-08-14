@@ -18,9 +18,9 @@ const Register: React.FC<RegisterProps> = ({ onRegister }) => {
         username,
         password,
       });
-      console.log(response.data); // Optional: Handle the register response
-      onRegister(username, password); // Call the onRegister callback if registration is successful
-      navigate("/codecell");
+      console.log(response.data); 
+ 
+      navigate("/login");
 
     } catch (error) {
       console.error('Registration error:', error);
